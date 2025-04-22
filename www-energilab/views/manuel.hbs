@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+
+<form action="/manuel" method="GET">
+  <button type="submit">🔄 Reload</button>
+</form>
+
+{{#if session}}
+  <p>Aktiv test: <strong>{{session.session_name}}</strong></p>
+  <p>Aktuel state: <strong>{{session.state_name}}</strong></p>
+  <form action="/manuel/changestate" method="POST">
+    Skift til state: <input type="text" name="state" required>
+    <button type="submit">Skift</button>
+  </form>
+  <form action="/manuel/stop" method="POST">
+    <button type="submit">🛑 Stop test</button>
+  </form>
+{{else}}
+  <p><strong>Der kører ikke nogen test</strong></p>
+  <form action="/manuel/start" method="POST">
+    Start test med navn: <input type="text" name="name" required>
+    i state: <input type="text" name="state" value="idle">
+    <button type="submit">▶️ Start</button>
+  </form>
+{{/if}}
+

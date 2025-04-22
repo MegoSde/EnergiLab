@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+<p><strong>Enhedens IP-adresse:</strong> {{ip}}</p>
+<p><strong>MQTT alias:</strong> {{mqtt_alias}}</p>
+
+{{#if session_name}}
+<p><strong>Aktiv session:</strong> {{session_name}}</p>
+{{else}}
+<p><em>Der kører ikke nogen måling</em></p>
+{{/if}}
+
+<a href="/">⬅️ Til forsiden</a>
+

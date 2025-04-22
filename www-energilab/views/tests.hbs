@@ -1,0 +1,34 @@
+<h1>{{title}}</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left;">ID</th>
+      <th style="text-align: left;">Navn</th>
+      <th style="text-align: left;">Starttid</th>
+      <th style="text-align: right;">Varighed (min)</th>
+      <th style="text-align: right;">Energi (J)</th>
+      <th style="text-align: right;">Watt (avg)</th>
+      <th style="text-align: right;">Temperatur</th>
+      <th style="text-align: right;">CPU (%)</th>
+      <th style="text-align: center;">Detaljer</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each tests}}
+      <tr>
+        <td style="text-align: left;">{{session_id}}</td>
+        <td style="text-align: left;">{{session_name}}</td>
+        <td style="text-align: left;">
+          {{formatDate start_time}}
+        </td>
+        <td style="text-align: right;">{{duration_minutes}}</td>
+        <td style="text-align: right;">{{energy_j}}</td>
+        <td style="text-align: right;">{{avg_power_w}}</td>
+        <td style="text-align: right;">{{avg_temperature_c}}</td>
+        <td style="text-align: right;">{{avg_cpu}}</td>
+        <td style="text-align: center;"><a href="/tests/{{session_id}}">🔍</a></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

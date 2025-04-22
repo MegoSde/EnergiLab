@@ -1,0 +1,34 @@
+<h1>{{title}}</h1>
+<a href="/tests">⬅️ Tilbage til oversigt</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Start</th>
+      <th>Varighed (min)</th>
+      <th style="text-align: right;">J</th>
+      <th style="text-align: right;">Watt</th>
+      <th style="text-align: right;">CPU%</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each states}}
+      <tr>
+        <td>{{state_name}}</td>
+        <td style="text-align: left;">{{formatDate start_time}}</td>
+        <td style="text-align: right;">{{duration_minutes}}</td>
+        <td style="text-align: right;">{{energy_j}}</td>
+        <td style="text-align: right;">{{avg_power_w}}</td>
+        <td style="text-align: right;">{{avg_cpu}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<canvas id="graph" width="1000" height="400"></canvas>
+
+<script src="/js/test-details.js"></script>
+<script>
+  drawChart({{{json graphData}}}, {{{json stateZones}}});
+</script>

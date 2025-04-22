@@ -1,0 +1,12 @@
+[Unit]
+Description=Energy Monitoring via MQTT
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/sut-user/energy-monitor/energy_monitor.py
+Restart=always
+User=sut-user
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001" # WebSocket
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+
+  db:
+    image: docker.io/postgres:latest
+    container_name: energi-db
+    restart: always
+    environment:
+      POSTGRES_USER: energilab
+      POSTGRES_PASSWORD: energilab123
+      POSTGRES_DB: energidata
+    volumes:
+      - ./postgres/init:/docker-entrypoint-initdb.d
+      - ./postgres/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

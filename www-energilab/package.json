@@ -1,0 +1,28 @@
+{
+  "name": "www-energilab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild src/test-details.js --bundle --outfile=public/js/test-details.js --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "chart.js": "^4.4.8",
+    "chartjs": "^0.3.24",
+    "chartjs-adapter-date-fns": "^3.0.0",
+    "chartjs-plugin-annotation": "^3.1.0",
+    "date-fns": "^4.1.0",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.1",
+    "mqtt": "^5.11.0",
+    "pg": "^8.14.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.2"
+  }
+}

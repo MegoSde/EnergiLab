@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    header {
+      background: #333;
+      color: white;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: white;
+      margin-right: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">EnergiLab</a>
+      <a href="/tests">Tests</a>
+      <a href="/manuel">Manuel test</a>
+      <a href="/info">Info</a>
+    </nav>
+  </header>
+
+  <main>
+    {{{body}}}
+  </main>
+</body>
+</html>
+

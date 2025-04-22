@@ -128,3 +128,24 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Ignorer node_modules i www-energilab
+/www-energilab/node_modules/
+
+# Ignorer eventuelle logfiler
+/www-energilab/npm-debug.log*
+/www-energilab/yarn-debug.log*
+/www-energilab/yarn-error.log*
+
+# Ignorer miljøfiler
+/www-energilab/.env
+/www-energilab/.env.local
+/www-energilab/.env.*.local
+
+# Ignorer build-output (hvis relevant)
+/www-energilab/dist/
+/www-energilab/build/
+/www-energilab/.next/
+/www-energilab/out/
+
+/postgres/data/
