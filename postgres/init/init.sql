@@ -32,6 +32,13 @@ CREATE TABLE IF NOT EXISTS measurements (
 CREATE INDEX IF NOT EXISTS idx_measurements_session_time
 ON measurements(session_id, timestamp);
 
+CREATE TABLE IF NOT EXISTS live_measurements (
+	topic text NOT NULL,
+	"timestamp" timestamp DEFAULT now() NOT NULL,
+	"data" jsonb NOT NULL,
+	CONSTRAINT live_measurements_pkey PRIMARY KEY (topic)
+);
+
 -- Stored Procedure: start_session
 CREATE OR REPLACE FUNCTION start_session(
   p_name TEXT DEFAULT NULL,
